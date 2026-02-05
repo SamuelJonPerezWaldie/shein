@@ -1,4 +1,4 @@
-package org.palomafp.shein;
+package org.palomafp.shein.modelo;
 
 /**
  * Hello world!
