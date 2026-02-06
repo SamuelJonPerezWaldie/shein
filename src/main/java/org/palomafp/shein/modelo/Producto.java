@@ -89,18 +89,17 @@ public class Producto {
     public void setDistribuidor(List<Distribuidor> distribuidor) {
         this.distribuidor = distribuidor;
     }
-
     @Override
-    public String toString() {
-        return "Producto{" +
-                "codigo=" + codigo +
-                ", talla='" + talla + '\'' +
-                ", color='" + color + '\'' +
-                ", precio='" + precio + '\'' +
-                ", material='" + material + '\'' +
-                ", modelo=" + modelo +
-                ", categoria=" + categoria +
-                ", distribuidor=" + distribuidor +
-                '}';
-    }
+public String toString() {
+    return "Producto{" +
+            "codigo=" + codigo +
+            ", talla='" + talla + '\'' +
+            ", color='" + color + '\'' +
+            ", precio='" + precio + '\'' +
+            ", material='" + material + '\'' +
+            ", modelo=" + modelo +
+            ", categoria=" + (categoria != null ? categoria.getTipo() : "null") + // Solo el tipo
+            ", distribuidor=" + distribuidor +
+            '}';
+}
 }

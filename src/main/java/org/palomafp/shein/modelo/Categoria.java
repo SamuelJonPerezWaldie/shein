@@ -41,13 +41,14 @@ public class Categoria {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "productos=" + productos +
-                ", tipo='" + tipo + '\'' +
-                ", genero=" + genero +
-                '}';
-    }
+@Override
+public String toString() {
+    return "Categoria{" +
+            "tipo='" + tipo + '\'' +
+            ", genero=" + genero +
+            ", totalProductos=" + (productos != null ? productos.size() : 0) + 
+            '}';
 }
+   
+    }
+
