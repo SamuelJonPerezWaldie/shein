@@ -18,7 +18,7 @@ public class ProductosDAO {
     private List<Producto> productos;
 
     /**
-     * Constructor de productos con la lista de productos
+     * Constructor por defecto de productos con la lista de productos
      */
     public ProductosDAO() {
 

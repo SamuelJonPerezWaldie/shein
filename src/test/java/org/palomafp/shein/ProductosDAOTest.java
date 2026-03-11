@@ -10,10 +10,8 @@ public class ProductosDAOTest {
     void testInicializacionDAO() {
         ProductosDAO dao = new ProductosDAO();
 
-        // existe un producto con código 1001 según la inicialización
-        assertNotNull(dao.getProductoByCodigo(1001));
-        assertNotNull(dao.getAllProductos());
-        assertNotNull(dao.getProductoRandom());
+        assertNotNull(dao.getAllProductos(), "Lista de productos no puede ser vacía");
+        assertNotNull(dao.getProductoByCodigo(1001), "Existe un producto con código 1001 según la inicialización");
     }
 
     @Test
@@ -22,6 +20,20 @@ public class ProductosDAOTest {
         dao.clearAll();
         Producto resultado = dao.getProductoRandom();
         assertNull(resultado);
+    }
+
+    @Test
+    void getProductoRandom() {
+        ProductosDAO dao = new ProductosDAO();
+        Producto resultado = dao.getProductoRandom();
+        assertNotNull(resultado, "El producto random no puede ser null");
+        assertNotNull(resultado.getCategoria(), "La categoría no puede ser null");
+        assertNotNull(resultado.getCodigo(), "El código no puede ser null");
+        assertNotNull(resultado.getColor(), "El color no puede ser null");
+        assertNotNull(resultado.getPrecio(), "El precio no puede ser null");
+        assertNotEquals(0, resultado.getPrecio(), "El precio tiene que ser mayor que 0");
+        assertNotNull(resultado.getDistribuidor(), "El distribuidor no puede ser null");
+        assertNotNull(resultado.getTalla(), "La talla no puede ser null");
     }
 
     @Test

@@ -5,6 +5,7 @@ import java.util.List;
  * Clase producto con todos los atributos y métodos para crear un producto completo e implementarlo en otras clases
  */
 public class Producto {
+
     // Codigo numérico de 4 dígitos
     private int codigo;
     // Talla en EU
@@ -15,12 +16,28 @@ public class Producto {
     private String material;
     // Persona que posa con dicho producto
     private Modelo modelo;
+
     private Categoria categoria;
+
     private List<Distribuidor> distribuidor;
 
+    /**
+     * Constructor por defecto de la clase producto
+     */
     public Producto() {
     }
 
+    /**
+     * Constructor de la clase completo con los 
+     * @param codigo
+     * @param talla
+     * @param color
+     * @param precio
+     * @param material
+     * @param modelo
+     * @param categoria
+     * @param distribuidor
+     */
     public Producto(int codigo, String talla, String color, String precio, String material,
                     Modelo modelo, Categoria categoria, List<Distribuidor> distribuidor) {
         this.codigo = codigo;
@@ -96,6 +113,7 @@ public class Producto {
     public void setDistribuidor(List<Distribuidor> distribuidor) {
         this.distribuidor = distribuidor;
     }
+    
     @Override
 public String toString() {
     return "Producto{" +
